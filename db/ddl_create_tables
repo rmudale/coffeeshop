@@ -1,0 +1,167 @@
+# Dump of table item_size
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `item_size`;
+
+CREATE TABLE `item_size` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `item_size` WRITE;
+
+
+/*!40000 ALTER TABLE `item_size` DISABLE KEYS */;
+
+INSERT INTO `item_size` (`id`, `name`)
+VALUES
+	(1,'Tall'),
+	(2,'Grande'),
+	(3,'Venti');
+
+/*!40000 ALTER TABLE `item_size` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table item_type_rel
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `item_type_rel`;
+
+CREATE TABLE `item_type_rel` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `item_id` int(11) DEFAULT NULL,
+  `type_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+LOCK TABLES `item_type_rel` WRITE;
+/*!40000 ALTER TABLE `item_type_rel` DISABLE KEYS */;
+
+INSERT INTO `item_type_rel` (`id`, `item_id`, `type_id`)
+VALUES
+	(1,1,1),
+	(2,1,3),
+	(3,1,4),
+	(4,2,1);
+
+/*!40000 ALTER TABLE `item_type_rel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table menu_item
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `menu_item`;
+
+CREATE TABLE `menu_item` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `menu_item` WRITE;
+/*!40000 ALTER TABLE `menu_item` DISABLE KEYS */;
+
+INSERT INTO `menu_item` (`id`, `name`)
+VALUES
+	(1,'Espresso'),
+	(2,'Latte'),
+	(3,'Cappuccino'),
+	(4,'Green Tea'),
+	(5,'Hot Tea');
+
+/*!40000 ALTER TABLE `menu_item` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table orders
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `orders`;
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_id` int(11) NOT NULL,
+  `item_type_id` int(11) DEFAULT '0',
+  `item_size_id` int(11) NOT NULL DEFAULT '0',
+  `quantity` int(2) NOT NULL DEFAULT '0',
+  `unit_price` float(3,2) DEFAULT '0.00',
+  `order_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`order_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+
+INSERT INTO `orders` (`order_id`, `item_id`, `item_type_id`, `item_size_id`, `quantity`, `unit_price`, `order_date`)
+VALUES
+	(1,1,1,1,3,1.95,'2016-11-09 19:25:31'),
+	(2,4,2,2,1,4.25,'2016-11-09 19:30:06'),
+	(3,3,2,2,1,3.75,'2016-11-09 22:43:11');
+
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table pricing
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pricing`;
+
+CREATE TABLE `pricing` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `item_id` int(11) NOT NULL,
+  `item_size_id` varchar(50) DEFAULT NULL,
+  `price` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `pricing` WRITE;
+/*!40000 ALTER TABLE `pricing` DISABLE KEYS */;
+
+INSERT INTO `pricing` (`id`, `item_id`, `item_size_id`, `price`)
+VALUES
+	(1,1,'1',1.95),
+	(2,1,'2',2.05),
+	(3,1,'3',2.35),
+	(4,2,'1',3.4),
+	(5,2,'2',4.45),
+	(6,2,'3',4.65),
+	(7,3,'1',3.15),
+	(8,3,'2',3.75),
+	(9,3,'3',4.15),
+	(10,4,'1',3.45),
+	(11,4,'2',4.25),
+	(12,4,'3',4.45),
+	(13,5,'2',1.95);
+
+/*!40000 ALTER TABLE `pricing` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table type
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `type`;
+
+CREATE TABLE `type` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `type` WRITE;
+/*!40000 ALTER TABLE `type` DISABLE KEYS */;
+
+INSERT INTO `type` (`id`, `name`)
+VALUES
+	(1,'Coffee'),
+	(2,'Tea'),
+	(3,'Cold Coffee'),
+	(4,'Hot Coffee');
+
+/*!40000 ALTER TABLE `type` ENABLE KEYS */;
+UNLOCK TABLES;

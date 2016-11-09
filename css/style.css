@@ -1,0 +1,118 @@
+/*
+ * Master css file
+ * Author - Rajendra Mudale
+ */
+
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+
+/*end reset*/
+
+
+body{
+	background: url(../images/bg.jpg);
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+/*----start-wrap-----*/
+.wrap{
+	width:80%;
+	margin:0 auto;
+	transition:all .2s linear;
+	-moz-transition:all .2s linear;/* firefox */
+	-webkit-transition:all .2s linear; /* safari and chrome */
+	-o-transition:all .2s linear; /* opera */
+	-ms-transition:all .2s linear;
+}
+/*----start-header-----*/
+.header{
+	 float:right;
+	 width:225px;
+	 clear:both;
+	 position:absolute;
+	 top:0;
+	 z-index:9;
+	 background:url(../images/bg.png);
+}
+
+/* ----- Utility Classess ----- */
+.w-50 { width: 50%; }
+.mr-tb40 {
+	margin-top: 40px; 
+	margin-bottom: 40px;
+}
+
+.pd-all30 {
+	padding: 30px;
+}
+
+.bg-white { background-color: #fff; }
+
+.br-1 {
+	border: 1px solid #4c3221;
+}
+
+.br-b2 {
+	border-bottom: 2px solid #4c3221;
+}
+
+.btn, .btn-large {
+	background: url(../images/bg.png);
+}
+
+th { font-weight: bold; }
+td { text-align: center; }
+.overflow-h { overflow: hidden; }
+
+.mr-l20 { margin-left:  20px; }
+
+.z-1 { z-index: 1;}
+
+
+
+
+/*----copy-right-----*/
+.copy-right{
+	text-align:center;
+	padding:15px 0px;
+	background:url(../images/bg.png);
+}
+.copy-right p{
+	font-family: 'Open Sans', sans-serif;
+	color: #FFF;
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+.copy-right p a{
+	color:#DBB25F;
+	font-family: 'Open Sans', sans-serif;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.copy-right p a:hover{
+	color:#fff;
+}

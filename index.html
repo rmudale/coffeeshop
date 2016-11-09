@@ -1,0 +1,146 @@
+<!--
+   Author: Raj Mudale
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Coffee Shop | Home :: Raj</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+  <link href='http://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/materialize.min.css">
+ </head>
+<body>
+<!-- start-header -->
+  <header class="wrap bg-white">
+      <div class="header_top">
+          <a href="index.html"><img src="images/logo.png" alt="" width="200px" /></a>
+      </div>
+  </header>
+<!-- End-header -->
+
+<!-- main -->
+    <div class="wrap">
+      <div class="browse-actions">
+        <a class="waves-effect waves-light btn placeOrder">
+            <i class="material-icons right">add</i> Place Order
+        </a>
+        <a class="waves-effect waves-light btn viewOrders">
+            <i class="material-icons right">cloud</i> View Orders
+        </a>
+      </div>
+
+      <div class="mr-tb40 newOrderForm">
+        <h5>Place New Order</h5>
+        <div id="orderForm" class="pd-all30 br-1"> </div>
+      </div>
+
+      <!-- Order List -->
+      <div class="mr-tb40 viewOrderList" style="display:none;">
+        <div class="" style="padding-bottom: 70px;">
+          <div class="float-lt"><h5>List of Orders</h5></div>
+          <div class="float-rt"> 
+            <div class="input-field float-lt z-1">
+              <select id="fltr-type">
+                 <option value="">Filter by Type</option>
+                 <option value="coffee">Coffee</option>
+                 <option value="tea">Tea</option>
+              </select>
+            </div>
+
+            <div class="input-field float-rt mr-l20 z-1">
+              <select id="fltr-size">
+                 <option value="">Filter by Size</option>
+                 <option value="1">Tall</option>
+                 <option value="2">Grande</option>
+                 <option value="3">Venti</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="pd-all30 br-1 list">
+          <div class="order" order-id='1'>
+            <table class="order-details">
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- End main -->
+
+
+<!-- HTML Templates -->
+<div class="addOrderFormTemplate hide">
+  <form class="placeOrderForm" action="http://localhost:3000/placeOrder">
+    <div class="row">
+      <div class="input-field"> 
+        <select name="item" id="item">
+          <option value="" disabled selected>Choose Item</option>
+        </select>
+        <label> Select Item</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field"> 
+        <select name="item-type" id="item-type">
+           <option value="" disabled selected>Choose Type</option>
+        </select>
+        <label>Select Type</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field"> 
+        <select name="item-size" id="item-size">
+           <option value="" disabled selected>Choose Sizes</option>
+        </select>
+        <label> Select Size</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <select name="unit-price" id="unit-price">
+          <option value=""></option>
+        </select>
+        <label for="unit-price">Unit Price</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field">
+        <select name="quantiry" id="quantiry">
+           <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
+           <option value="6">6</option>
+           <option value="7">7</option>
+           <option value="8">8</option>
+           <option value="9">9</option>
+           <option value="10">10</option>
+        </select>
+        <label> Add Quantity</label>
+      </div>
+    </div>
+
+      <button class="btn waves-effect waves-light" type="submit" name="action">
+        Submit <i class="material-icons right">send</i>
+      </button>
+  </form>
+</div>
+
+<!---start-footer---->      
+   <footer class="copy-right">
+      <p><a href="//wego.com/">Copyright Wego.com by Raj </a> </p>
+   </footer>
+<!---End-footer---->
+
+<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script> 
+</body>
+</html>
